@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  webwayback:
+    image: ${DOCKER_REGISTRY-}webwayback
+    build:
+      context: .
+      dockerfile: WebWayBack.Api/Dockerfile
+    ports:
+     - "80:80"
