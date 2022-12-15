@@ -31,7 +31,7 @@ This solution contains a docker-compose.yaml file that defines the configuration
 the user should be able to clone this repository from github and able to execute with the following commands:
 
 `````````````````
-cd {projectLocation}\WebWayBack\src
+cd {projectLocation}\WebWayBack
 docker compose up
 `````````````````
 
