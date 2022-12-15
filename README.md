@@ -27,7 +27,7 @@ The backend was build on .netCore and consist on just two endpoints:
 
 ## Docker
 
-This solution contains a docker-compose.yaml file that define the configuration of the container 
+This solution contains a docker-compose.yaml file that defines the configuration of the container 
 the user should be able to clone this repository from github and able to execute with the following commands:
 
 `````````````````
