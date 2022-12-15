@@ -19,7 +19,7 @@ namespace WebWayBack.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> GetOldestWebsiteAsync([FromBody]Request request)
         {
-            var oldestWebsite = await _webWayBackService.GetOldestWebsiteUrl(request!.UrlWebsite!);
+            var oldestWebsite = await _webWayBackService.GetOldestWebsiteUrlAsync(request!.UrlWebsite!);
 
             return Ok(oldestWebsite);
         }

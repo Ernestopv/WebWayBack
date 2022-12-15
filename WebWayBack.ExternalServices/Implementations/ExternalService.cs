@@ -23,13 +23,12 @@ namespace WebWayBack.ExternalServices.Implementations
          
         }
 
-
         /// <summary>
         /// Get web archive 
         /// </summary>
         /// <param name="website"></param>
         /// <returns></returns>
-        public async Task<List<List<string>>?> GetHistoricWebArchives(string website)
+        public async Task<List<List<string>>?> GetHistoricWebArchivesAsync(string website)
         {
             var searchUrl = $"{_appSettings.BaseUrl}/cdx/search/cdx?url={website}&from={BirthWebYear}&to={_currentYear}&limit=1&output=json";
 
@@ -51,7 +50,7 @@ namespace WebWayBack.ExternalServices.Implementations
         /// <param name="website"></param>
         /// <param name="timestamp"></param>
         /// <returns></returns>
-        public async Task<ExternalResponse?> GetOldWebsite(string website, string timestamp)
+        public async Task<ExternalResponse?> GetOldWebsiteAsync(string website, string? timestamp)
         {
             var getOldWebsite = $"{_appSettings.BaseUrl}/wayback/available?url={website}&timestamp={timestamp}";
 
@@ -63,12 +62,14 @@ namespace WebWayBack.ExternalServices.Implementations
 
             var oldWebsiteDetails = JsonConvert.DeserializeObject<ExternalResponse>(responseString);
 
-            return oldWebsiteDetails;
+            var result = oldWebsiteDetails!.Archived_snapshots!.Closest == null ? null : oldWebsiteDetails;
+
+            return result;
         }
 
         public async Task<bool> CheckExternalServiceConnectionAsync(CancellationToken cancellationToken = default)
         {
-            var response = await  _httpClient.GetAsync(_appSettings.BaseUrl);
+            var response = await  _httpClient.GetAsync(_appSettings.BaseUrl, cancellationToken);
 
             return response.IsSuccessStatusCode;
         }

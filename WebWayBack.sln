@@ -13,7 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebWayBack.Models", "WebWay
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebWayBack.Infrastructure", "WebWayBack.Infrastructure\WebWayBack.Infrastructure.csproj", "{6713E5FE-7B55-4C58-A9A0-F372A949D824}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebWayBack.Filters", "WebWayBack.Filters\WebWayBack.Filters.csproj", "{D8C7697A-C505-40DB-819A-BD0AB0BD5C33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebWayBack.Filters", "WebWayBack.Filters\WebWayBack.Filters.csproj", "{D8C7697A-C505-40DB-819A-BD0AB0BD5C33}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebWayBack.Services.Tests", "WebWayBack.Services.Tests\WebWayBack.Services.Tests.csproj", "{D9E9435C-BA8F-4DCE-8F26-F08FEB3C7385}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebWayBack.Api.Tests", "WebWayBack.Api.Tests\WebWayBack.Api.Tests.csproj", "{D6C9231D-5884-4DA7-AE7B-020BACA13FD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebWayBack.Models.Tests", "WebWayBack.Models.Tests\WebWayBack.Models.Tests.csproj", "{95EF2BE4-33AC-48B7-9EC3-60B609910133}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +51,18 @@ Global
 		{D8C7697A-C505-40DB-819A-BD0AB0BD5C33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8C7697A-C505-40DB-819A-BD0AB0BD5C33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8C7697A-C505-40DB-819A-BD0AB0BD5C33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9E9435C-BA8F-4DCE-8F26-F08FEB3C7385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9E9435C-BA8F-4DCE-8F26-F08FEB3C7385}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9E9435C-BA8F-4DCE-8F26-F08FEB3C7385}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9E9435C-BA8F-4DCE-8F26-F08FEB3C7385}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6C9231D-5884-4DA7-AE7B-020BACA13FD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6C9231D-5884-4DA7-AE7B-020BACA13FD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6C9231D-5884-4DA7-AE7B-020BACA13FD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6C9231D-5884-4DA7-AE7B-020BACA13FD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95EF2BE4-33AC-48B7-9EC3-60B609910133}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95EF2BE4-33AC-48B7-9EC3-60B609910133}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95EF2BE4-33AC-48B7-9EC3-60B609910133}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95EF2BE4-33AC-48B7-9EC3-60B609910133}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

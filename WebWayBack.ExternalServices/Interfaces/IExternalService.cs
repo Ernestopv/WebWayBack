@@ -4,9 +4,9 @@ namespace WebWayBack.ExternalServices.Interfaces
 {
     public interface IExternalService
     {
-        Task<List<List<string>>?> GetHistoricWebArchives(string website);
+        Task<List<List<string>>?> GetHistoricWebArchivesAsync(string website);
 
-        Task<ExternalResponse?> GetOldWebsite(string website, string timestamp);
+        Task<ExternalResponse?> GetOldWebsiteAsync(string website, string? timestamp);
 
         Task<bool> CheckExternalServiceConnectionAsync(CancellationToken cancellationToken = default);
     }

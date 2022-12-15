@@ -4,6 +4,6 @@ namespace WebWayBack.Services.Interfaces
 {
     public interface IWebWayBackService
     {
-        Task<Response> GetOldestWebsiteUrl(string website);
+        Task<Response> GetOldestWebsiteUrlAsync(string website);
     }
 }

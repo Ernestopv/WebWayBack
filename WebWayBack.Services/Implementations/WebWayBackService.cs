@@ -12,19 +12,18 @@ namespace WebWayBack.Services.Implementations
             _externalService = externalService;
 
         }
-        public async Task<Response> GetOldestWebsiteUrl(string website)
+        public async Task<Response> GetOldestWebsiteUrlAsync(string website)
         {
 
-            var webArchives = await _externalService.GetHistoricWebArchives(website.ToLower());
-            if (webArchives!.Count == 0) return new Response();
+            var webArchives = await _externalService.GetHistoricWebArchivesAsync(website.ToLower());
+            if (webArchives!.Count == 0 || webArchives.Count == 1) return new Response();
+            
             var webArchive = webArchives!.Skip(1).FirstOrDefault();
-
             var timeStamp = webArchive!.Skip(1).FirstOrDefault();
 
-            if (timeStamp == null) return new Response();
-            var oldWebsite = await _externalService.GetOldWebsite(website, timeStamp);
+            var oldWebsite = await _externalService.GetOldWebsiteAsync(website, timeStamp);
 
-            if (oldWebsite == null || oldWebsite!.Archived_snapshots!.Closest == null) return new Response();
+            if (oldWebsite == null ) return new Response();
             
             var date = GetDate(timeStamp);
 
@@ -38,9 +37,9 @@ namespace WebWayBack.Services.Implementations
 
         }
 
-        private static string GetDate(string timeStamp)
+        private static string GetDate(string? timeStamp)
         {
-            var data = long.Parse(timeStamp);
+            var data = long.Parse(timeStamp!);
             var year = int.Parse(data.ToString().Substring(0, 4));
             var month = int.Parse(data.ToString().Substring(4, 2));
             var day = int.Parse(data.ToString().Substring(6, 2));
